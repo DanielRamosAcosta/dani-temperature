@@ -1,16 +1,9 @@
-import * as readline from "node:readline/promises";
-import { stdin as input, stdout as output } from "node:process";
-import { isEmail } from "./isEmail.js";
+import { TemperatureApp } from "./TemperatureApp.js";
+import { LocationManager } from "./services/LocationManager.js";
+import { TemperatureManager } from "./services/TemperatureManager.js";
 
-const rl = readline.createInterface({ input, output });
+const app = new TemperatureApp(new LocationManager(), new TemperatureManager());
 
-const email = await rl.question("Please, enter an email: ");
-rl.close();
+const temperature = await app.getCurrentTemperature();
 
-const isValid = isEmail(email);
-
-if (isValid) {
-  console.log("The email is valid");
-} else {
-  console.log("The email is invalid");
-}
+console.log(temperature);
