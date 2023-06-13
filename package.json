@@ -1,0 +1,24 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "Example repository for testing",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node .",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint --max-warnings src",
+    "lint:fix": "eslint --fix src",
+    "format": "prettier --check src",
+    "format:fix": "prettier --write src"
+  },
+  "author": "Daniel Ramos",
+  "license": "MIT",
+  "devDependencies": {
+    "c8": "^7.12.0",
+    "eslint": "^8.21.0",
+    "prettier": "^2.7.1",
+    "vitest": "^0.29.2"
+  }
+}
